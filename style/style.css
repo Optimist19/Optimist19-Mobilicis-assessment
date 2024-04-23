@@ -1,0 +1,173 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Averia Serif Libre", serif;
+}
+
+section {
+  height: 100vh;
+}
+
+.search-nav {
+  /* height: 100vh; */
+
+  background-image: url("../img/3601px-Tokyo_from_the_top_of_the_SkyTree.jpeg");
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.search-nav nav {
+  width: 100%;
+  position: fixed;
+}
+
+.search-nav nav header {
+  padding: 3vh 3vw;
+  /* width: 80%; */
+}
+
+.search-nav nav .logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0 3vw;
+}
+
+header ul li {
+  cursor: pointer;
+  color: aliceblue;
+
+  transition: all 0.5s ease-in-out;
+}
+
+header ul li:hover {
+  color: gold;
+}
+
+header ul li:first-child {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.search-con h1 {
+  text-align: center;
+  font-size: 35px;
+  color: aliceblue;
+  letter-spacing: 1px;
+}
+
+.search-con {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.search-con div {
+  display: flex;
+  align-items: center;
+  padding: 3vh 0;
+
+  gap: 0 2vw;
+}
+
+.search-con input {
+  min-width: 17%;
+  height: 6vh;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  border-color: gold;
+  padding-left: 3px;
+}
+
+.search-con input::placeholder {
+  padding-left: 3px;
+}
+
+.search-con button {
+  display: flex;
+  align-items: center;
+  padding: 0 2vw;
+  cursor: pointer;
+  gap: 3px;
+  border-radius: 5px;
+  border-color: gold;
+}
+
+.search-con .shakura {
+  width: 20px;
+  height: 20px;
+}
+
+.search-con p {
+  text-align: center;
+  color: aliceblue;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+footer {
+  background-color: black;
+  /* height: 100vh; */
+  padding: 5vh 0;
+  width: 100%;
+  color: aliceblue;
+  
+}
+
+footer nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+footer nav div ul {
+  list-style: none;
+}
+
+footer nav div h6 {
+  margin-bottom: 1vh;
+  font-size: 24px;
+}
+
+footer nav div ul li {
+  line-height: 30px;
+}
+
+footer nav div:last-child ul {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 0 5px;
+}
+footer nav div ul li {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease-in-out;
+}
+
+footer nav div ul li:hover {
+  color: #ffd700;
+}
+
+footer .small-con{
+	padding: 2vh 0;
+	display: flex;
+	justify-content: center;
+	color: rgba(255, 255, 255, 0.3);
+
+}
