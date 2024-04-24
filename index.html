@@ -18,6 +18,7 @@
   </head>
   <body>
     <section class="search-nav">
+      
       <nav>
         <header>
           <ul>
@@ -31,11 +32,10 @@
             <li>HOME</li>
             <li>ABOUT US</li>
             <li>CATEGORY</li>
-            <li>PRICE</li>
             <li>CONTACT</li>
-            <li>PAGES</li>
-            <li>SIGNUP</li>
-            <li>LOGIN</li>
+            <!-- <li>SIGNUP</li>
+            <li>LOGIN</li> -->
+            <li id="google_translate_element"></li>
           </ul>
         </header>
       </nav>
@@ -44,11 +44,20 @@
         <h1>1500+ Jobs posted last week</h1>
 
         <div>
-          <input type="text" placeholder="what are you looking for" />
-          <input type="text" placeholder="select location" />
-          <input type="text" placeholder="category" />
+          <input
+            type="text"
+            id="job-title"
+            placeholder="what are you looking for"
+            required
+          />
+          <input
+            type="text"
+            id="job-location"
+            placeholder="select location"
+            required
+          />
 
-          <button>
+          <button id="search-btn">
             <i class="fa-solid fa-magnifying-glass"></i>
             <span>Search</span
             ><span><img src="./img/shakura.gif" class="shakura" /></span>
@@ -61,7 +70,255 @@
         </p>
       </div>
     </section>
-    <section class="job-posting"></section>
+    <main>
+      <section class="user-search-job-result">
+        <div id="user-spinner"><i class="fa-solid fa-spinner fa-spin"></i></div>
+        <div id="user-job-result"></div>
+      </section>
+
+
+      <section id="slider">
+        <div>
+          <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+          centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+          <swiper-slide><img src="./img/Fukuoka.jpeg" alt="" /></swiper-slide>
+          <swiper-slide><img src="./img/Hiroshima..jpg" alt="" /></swiper-slide>
+          <swiper-slide><img src="./img/Kobe.jpg" alt="" /></swiper-slide>
+          <swiper-slide><img src="./img/Kyoto.jpeg" alt="" /></swiper-slide>
+          <swiper-slide><img src="./img/Nagoya.jpg" alt="" /></swiper-slide>
+          <swiper-slide><img src="./img/Osaka.jpg" alt="" /></swiper-slide>
+          <swiper-slide><img src="./img/Sendai.jpg" alt="" /></swiper-slide>
+          <swiper-slide><img src="./img/Sapporo.jpeg" alt="" /></swiper-slide>
+          <swiper-slide><img src="./img/Tokyo_from_the_top_of_the_SkyTree.JPG" alt="" /></swiper-slide>
+          <swiper-slide><img src="./img/Yokohama.jpg" alt="" /></swiper-slide>
+        </swiper-container>
+        </div>
+      </section>
+
+      <section class="job-posting">
+        <div id="window-spinner">
+          <i class="fa-solid fa-spinner fa-spin"></i>
+        </div>
+        <div id="job-con"></div>
+        <!-- <div id="job-con">
+          <div class="job-card">
+            <p class="job-title">Tile: Software Engineer</p>
+            <p class="job-location">Location: 東京都東京</p>
+            <p class="job-sourse">Source: 提供元: LinkedIn</p>
+            <a class="job-link"
+              href="//jp.linkedin.com/jobs/view/software-engineer-at-jellyfish-3903655009?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+              >Application URL</a
+            >
+            <p class="job-comp-name">Company Name: $JELLYFISH</p>
+            <p class="job-desc">職務 研究領域が抱える複雑な課題に向き合い、提供するサービスで、あらゆる開発を推進していただきます。 エンジニアは特定の技術に限定せず、課題に対してを最適な技術を駆使し取り組んでいただきます。業務内容 ・単一のサービスとプラットフォームの視点からのシステム構築 ・事業ドメインをコードへ落とし込み ・仮説からプロダクトを素早く作り出し、価値検証をエンジニアの立場から推進 ・事業の状況を踏まえ、妥当な設計を提案でき、拡張性も考慮し技術的視点から意思決定 ・技術的負債を主体的に改善する提案と推進開発フロー ・全社の戦略をもとに、各サービスごとにチームで開発しています。 ・各課題に対して、データ分析・施策の検討をチームで行います。 ・チーム毎に2週間のサイクルのスクラム開発を実施しています。 ・原則としてテストコードを書き、マージされるすべてのコードはレビューされています。</p>
+            <p class="job-time">Job Publication Time: 2024-04-23T08:36:42Z</p>
+          </div>
+          <div class="job-card">
+            <p class="job-title">Tile: Software Engineer</p>
+            <p class="job-location">Location: 東京都東京</p>
+            <p class="job-sourse">Source: 提供元: LinkedIn</p>
+            <a class="job-link"
+              href="//jp.linkedin.com/jobs/view/software-engineer-at-jellyfish-3903655009?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+              >Application URL</a
+            >
+            <p class="job-comp-name">Company Name: $JELLYFISH</p>
+            <p class="job-desc">職務 研究領域が抱える複雑な課題に向き合い、提供するサービスで、あらゆる開発を推進していただきます。 エンジニアは特定の技術に限定せず、課題に対してを最適な技術を駆使し取り組んでいただきます。業務内容 ・単一のサービスとプラットフォームの視点からのシステム構築 ・事業ドメインをコードへ落とし込み ・仮説からプロダクトを素早く作り出し、価値検証をエンジニアの立場から推進 ・事業の状況を踏まえ、妥当な設計を提案でき、拡張性も考慮し技術的視点から意思決定 ・技術的負債を主体的に改善する提案と推進開発フロー ・全社の戦略をもとに、各サービスごとにチームで開発しています。 ・各課題に対して、データ分析・施策の検討をチームで行います。 ・チーム毎に2週間のサイクルのスクラム開発を実施しています。 ・原則としてテストコードを書き、マージされるすべてのコードはレビューされています。</p>
+            <p class="job-time">Job Publication Time: 2024-04-23T08:36:42Z</p>
+          </div>
+          <div class="job-card">
+            <p class="job-title">Tile: Software Engineer</p>
+            <p class="job-location">Location: 東京都東京</p>
+            <p class="job-sourse">Source: 提供元: LinkedIn</p>
+            <a class="job-link"
+              href="//jp.linkedin.com/jobs/view/software-engineer-at-jellyfish-3903655009?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+              >Application URL</a
+            >
+            <p class="job-comp-name">Company Name: $JELLYFISH</p>
+            <p class="job-desc">職務 研究領域が抱える複雑な課題に向き合い、提供するサービスで、あらゆる開発を推進していただきます。 エンジニアは特定の技術に限定せず、課題に対してを最適な技術を駆使し取り組んでいただきます。業務内容 ・単一のサービスとプラットフォームの視点からのシステム構築 ・事業ドメインをコードへ落とし込み ・仮説からプロダクトを素早く作り出し、価値検証をエンジニアの立場から推進 ・事業の状況を踏まえ、妥当な設計を提案でき、拡張性も考慮し技術的視点から意思決定 ・技術的負債を主体的に改善する提案と推進開発フロー ・全社の戦略をもとに、各サービスごとにチームで開発しています。 ・各課題に対して、データ分析・施策の検討をチームで行います。 ・チーム毎に2週間のサイクルのスクラム開発を実施しています。 ・原則としてテストコードを書き、マージされるすべてのコードはレビューされています。</p>
+            <p class="job-time">Job Publication Time: 2024-04-23T08:36:42Z</p>
+          </div>
+          <div class="job-card">
+            <p class="job-title">Tile: Software Engineer</p>
+            <p class="job-location">Location: 東京都東京</p>
+            <p class="job-sourse">Source: 提供元: LinkedIn</p>
+            <a class="job-link"
+              href="//jp.linkedin.com/jobs/view/software-engineer-at-jellyfish-3903655009?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+              >Application URL</a
+            >
+            <p class="job-comp-name">Company Name: $JELLYFISH</p>
+            <p class="job-desc">職務 研究領域が抱える複雑な課題に向き合い、提供するサービスで、あらゆる開発を推進していただきます。 エンジニアは特定の技術に限定せず、課題に対してを最適な技術を駆使し取り組んでいただきます。業務内容 ・単一のサービスとプラットフォームの視点からのシステム構築 ・事業ドメインをコードへ落とし込み ・仮説からプロダクトを素早く作り出し、価値検証をエンジニアの立場から推進 ・事業の状況を踏まえ、妥当な設計を提案でき、拡張性も考慮し技術的視点から意思決定 ・技術的負債を主体的に改善する提案と推進開発フロー ・全社の戦略をもとに、各サービスごとにチームで開発しています。 ・各課題に対して、データ分析・施策の検討をチームで行います。 ・チーム毎に2週間のサイクルのスクラム開発を実施しています。 ・原則としてテストコードを書き、マージされるすべてのコードはレビューされています。</p>
+            <p class="job-time">Job Publication Time: 2024-04-23T08:36:42Z</p>
+          </div>
+          <div class="job-card">
+            <p class="job-title">Tile: Software Engineer</p>
+            <p class="job-location">Location: 東京都東京</p>
+            <p class="job-sourse">Source: 提供元: LinkedIn</p>
+            <a class="job-link"
+              href="//jp.linkedin.com/jobs/view/software-engineer-at-jellyfish-3903655009?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+              >Application URL</a
+            >
+            <p class="job-comp-name">Company Name: $JELLYFISH</p>
+            <p class="job-desc">職務 研究領域が抱える複雑な課題に向き合い、提供するサービスで、あらゆる開発を推進していただきます。 エンジニアは特定の技術に限定せず、課題に対してを最適な技術を駆使し取り組んでいただきます。業務内容 ・単一のサービスとプラットフォームの視点からのシステム構築 ・事業ドメインをコードへ落とし込み ・仮説からプロダクトを素早く作り出し、価値検証をエンジニアの立場から推進 ・事業の状況を踏まえ、妥当な設計を提案でき、拡張性も考慮し技術的視点から意思決定 ・技術的負債を主体的に改善する提案と推進開発フロー ・全社の戦略をもとに、各サービスごとにチームで開発しています。 ・各課題に対して、データ分析・施策の検討をチームで行います。 ・チーム毎に2週間のサイクルのスクラム開発を実施しています。 ・原則としてテストコードを書き、マージされるすべてのコードはレビューされています。</p>
+            <p class="job-time">Job Publication Time: 2024-04-23T08:36:42Z</p>
+          </div>
+          <div class="job-card">
+            <p class="job-title">Tile: Software Engineer</p>
+            <p class="job-location">Location: 東京都東京</p>
+            <p class="job-sourse">Source: 提供元: LinkedIn</p>
+            <a class="job-link"
+              href="//jp.linkedin.com/jobs/view/software-engineer-at-jellyfish-3903655009?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+              >Application URL</a
+            >
+            <p class="job-comp-name">Company Name: $JELLYFISH</p>
+            <p class="job-desc">職務 研究領域が抱える複雑な課題に向き合い、提供するサービスで、あらゆる開発を推進していただきます。 エンジニアは特定の技術に限定せず、課題に対してを最適な技術を駆使し取り組んでいただきます。業務内容 ・単一のサービスとプラットフォームの視点からのシステム構築 ・事業ドメインをコードへ落とし込み ・仮説からプロダクトを素早く作り出し、価値検証をエンジニアの立場から推進 ・事業の状況を踏まえ、妥当な設計を提案でき、拡張性も考慮し技術的視点から意思決定 ・技術的負債を主体的に改善する提案と推進開発フロー ・全社の戦略をもとに、各サービスごとにチームで開発しています。 ・各課題に対して、データ分析・施策の検討をチームで行います。 ・チーム毎に2週間のサイクルのスクラム開発を実施しています。 ・原則としてテストコードを書き、マージされるすべてのコードはレビューされています。</p>
+            <p class="job-time">Job Publication Time: 2024-04-23T08:36:42Z</p>
+          </div>
+          <div class="job-card">
+            <p class="job-title">Tile: Software Engineer</p>
+            <p class="job-location">Location: 東京都東京</p>
+            <p class="job-sourse">Source: 提供元: LinkedIn</p>
+            <a class="job-link"
+              href="//jp.linkedin.com/jobs/view/software-engineer-at-jellyfish-3903655009?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+              >Application URL</a
+            >
+            <p class="job-comp-name">Company Name: $JELLYFISH</p>
+            <p class="job-desc">職務 研究領域が抱える複雑な課題に向き合い、提供するサービスで、あらゆる開発を推進していただきます。 エンジニアは特定の技術に限定せず、課題に対してを最適な技術を駆使し取り組んでいただきます。業務内容 ・単一のサービスとプラットフォームの視点からのシステム構築 ・事業ドメインをコードへ落とし込み ・仮説からプロダクトを素早く作り出し、価値検証をエンジニアの立場から推進 ・事業の状況を踏まえ、妥当な設計を提案でき、拡張性も考慮し技術的視点から意思決定 ・技術的負債を主体的に改善する提案と推進開発フロー ・全社の戦略をもとに、各サービスごとにチームで開発しています。 ・各課題に対して、データ分析・施策の検討をチームで行います。 ・チーム毎に2週間のサイクルのスクラム開発を実施しています。 ・原則としてテストコードを書き、マージされるすべてのコードはレビューされています。</p>
+            <p class="job-time">Job Publication Time: 2024-04-23T08:36:42Z</p>
+          </div>
+          <div class="job-card">
+            <p class="job-title">Tile: Software Engineer</p>
+            <p class="job-location">Location: 東京都東京</p>
+            <p class="job-sourse">Source: 提供元: LinkedIn</p>
+            <a class="job-link"
+              href="//jp.linkedin.com/jobs/view/software-engineer-at-jellyfish-3903655009?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+              >Application URL</a
+            >
+            <p class="job-comp-name">Company Name: $JELLYFISH</p>
+            <p class="job-desc">職務 研究領域が抱える複雑な課題に向き合い、提供するサービスで、あらゆる開発を推進していただきます。 エンジニアは特定の技術に限定せず、課題に対してを最適な技術を駆使し取り組んでいただきます。業務内容 ・単一のサービスとプラットフォームの視点からのシステム構築 ・事業ドメインをコードへ落とし込み ・仮説からプロダクトを素早く作り出し、価値検証をエンジニアの立場から推進 ・事業の状況を踏まえ、妥当な設計を提案でき、拡張性も考慮し技術的視点から意思決定 ・技術的負債を主体的に改善する提案と推進開発フロー ・全社の戦略をもとに、各サービスごとにチームで開発しています。 ・各課題に対して、データ分析・施策の検討をチームで行います。 ・チーム毎に2週間のサイクルのスクラム開発を実施しています。 ・原則としてテストコードを書き、マージされるすべてのコードはレビューされています。</p>
+            <p class="job-time">Job Publication Time: 2024-04-23T08:36:42Z</p>
+          </div>
+          <div class="job-card">
+            <p class="job-title">Tile: Software Engineer</p>
+            <p class="job-location">Location: 東京都東京</p>
+            <p class="job-sourse">Source: 提供元: LinkedIn</p>
+            <a class="job-link"
+              href="//jp.linkedin.com/jobs/view/software-engineer-at-jellyfish-3903655009?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+              >Application URL</a
+            >
+            <p class="job-comp-name">Company Name: $JELLYFISH</p>
+            <p class="job-desc">職務 研究領域が抱える複雑な課題に向き合い、提供するサービスで、あらゆる開発を推進していただきます。 エンジニアは特定の技術に限定せず、課題に対してを最適な技術を駆使し取り組んでいただきます。業務内容 ・単一のサービスとプラットフォームの視点からのシステム構築 ・事業ドメインをコードへ落とし込み ・仮説からプロダクトを素早く作り出し、価値検証をエンジニアの立場から推進 ・事業の状況を踏まえ、妥当な設計を提案でき、拡張性も考慮し技術的視点から意思決定 ・技術的負債を主体的に改善する提案と推進開発フロー ・全社の戦略をもとに、各サービスごとにチームで開発しています。 ・各課題に対して、データ分析・施策の検討をチームで行います。 ・チーム毎に2週間のサイクルのスクラム開発を実施しています。 ・原則としてテストコードを書き、マージされるすべてのコードはレビューされています。</p>
+            <p class="job-time">Job Publication Time: 2024-04-23T08:36:42Z</p>
+          </div>
+          <div class="job-card">
+            <p class="job-title">Tile: Software Engineer</p>
+            <p class="job-location">Location: 東京都東京</p>
+            <p class="job-sourse">Source: 提供元: LinkedIn</p>
+            <a class="job-link"
+              href="//jp.linkedin.com/jobs/view/software-engineer-at-jellyfish-3903655009?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+              >Application URL</a
+            >
+            <p class="job-comp-name">Company Name: $JELLYFISH</p>
+            <p class="job-desc">職務 研究領域が抱える複雑な課題に向き合い、提供するサービスで、あらゆる開発を推進していただきます。 エンジニアは特定の技術に限定せず、課題に対してを最適な技術を駆使し取り組んでいただきます。業務内容 ・単一のサービスとプラットフォームの視点からのシステム構築 ・事業ドメインをコードへ落とし込み ・仮説からプロダクトを素早く作り出し、価値検証をエンジニアの立場から推進 ・事業の状況を踏まえ、妥当な設計を提案でき、拡張性も考慮し技術的視点から意思決定 ・技術的負債を主体的に改善する提案と推進開発フロー ・全社の戦略をもとに、各サービスごとにチームで開発しています。 ・各課題に対して、データ分析・施策の検討をチームで行います。 ・チーム毎に2週間のサイクルのスクラム開発を実施しています。 ・原則としてテストコードを書き、マージされるすべてのコードはレビューされています。</p>
+            <p class="job-time">Job Publication Time: 2024-04-23T08:36:42Z</p>
+          </div>
+        </div> -->
+      </section>
+
+      <section class="why-choose">
+        <h2>Why Choose Us</h2>
+        <div class="job-type-con">
+          <div>
+            <i class="fa-solid fa-lightbulb fa-beat"></i>
+            <h3>More Jobs Every Day</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+              reprehenderit explicabo quos fugit vitae dolorum.
+            </p>
+            <div class="read">
+              <p>Read More</p>
+              <i class="fa-solid fa-arrow-right fa-fade"></i>
+            </div>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-wrench fa-fa"></i>
+            <h3>Creative Jobs</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+              reprehenderit explicabo quos fugit vitae dolorum.
+            </p>
+            <div>
+              <p>Read More</p>
+              <i class="fa-solid fa-arrow-right fa-fade"></i>
+            </div>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-calculator fa-bounce"></i>
+            <h3>Finance & Accounting</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+              reprehenderit explicabo quos fugit vitae dolorum.
+            </p>
+            <div>
+              <p>Read More</p>
+              <i class="fa-solid fa-arrow-right fa-fade"></i>
+            </div>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-house-medical fa-fade"></i>
+            <h3>Healthcare</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+              reprehenderit explicabo quos fugit vitae dolorum.
+            </p>
+            <div>
+              <p>Read More</p>
+              <i class="fa-solid fa-arrow-right fa-fade"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact">
+        <div>
+          <h2>Contact</h2>
+          <form id="contact-form">
+            <input
+              type="text"
+              id="name"
+              placeholder="NAME"
+              name="name"
+              value=""
+              required
+            />
+
+            <input
+              type="email"
+              id="email"
+              placeholder="EMAIL"
+              name="email"
+              value=""
+              required
+            />
+
+            <textarea
+              rows="20"
+              placeholder="MESSAGE"
+              name="message"
+              required
+            ></textarea>
+
+            <button id="submit" type="submit">
+              <i class="fa fa-paper-plane"></i
+              ><span class="send-text">SEND</span>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
     <footer>
       <nav>
         <div>
@@ -96,11 +353,26 @@
       <div class="small-con">
         <small
           >Copyright &#169; 2024 All Rights Reserved | This template is made
-          with <i class="fa-solid fa-heart" style="color: #ffd700;"></i> by Colorlib</small
+          with <i class="fa-solid fa-heart" style="color: #ffd700"></i> by
+          Colorlib</small
         >
       </div>
     </footer>
 
     <script src="./index.js"></script>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
   </body>
 </html>
