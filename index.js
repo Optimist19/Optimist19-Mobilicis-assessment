@@ -7,10 +7,10 @@ let searchBtn = document.getElementById("search-btn");
 let userSpinner = document.getElementById("user-spinner"); //Loading icon
 let windowSpinner = document.getElementById("window-spinner"); //Loading icon
 
-const home = document.getElementById("home-1"); //nav for web to change color
-const about = document.getElementById("about-2"); //nav for web to change color
-const jobs = document.getElementById("jobs-3"); //nav for web to change color
-const contact = document.getElementById("contact-4"); //nav for web to change color
+const home = document.getElementById("home-nav"); //nav for desktop to change color
+const about = document.getElementById("about-nav"); //nav for desktop to change color
+const jobs = document.getElementById("jobs-nav"); //nav for desktop to change color
+const contact = document.getElementById("contact-nav"); //nav for desktop to change color
 
 
 const handleScroll = () => {
@@ -37,20 +37,17 @@ searchBtn.addEventListener("click", searchFtn);
 
 async function searchFtn() {
 
-  console.log(jobTitle);
-  console.log(jobLocation);
+
   if (jobTitle.value === "" && jobLocation.value === "") {
-    console.log("return nothing");
     return;
   } else {
     userSpinner.style.display = "flex"
-    const url = `https://job-search-api1.p.rapidapi.com/v1/job-description-search?q=${jobTitle.value.trim}&page=1&country=japan&city=${jobLocation.value.trim}`;
+    const url = `https://job-search-api1.p.rapidapi.com/v1/job-description-search?q=${jobTitle.value}&page=1&country=japan&city=${jobLocation.value}`;
 
     const options = {
       method: "GET",
       headers: {
         "X-RapidAPI-Key": "9eca6d0ee8mshac946c5f35ec812p1d0753jsnb4e5dafe5957",
-        // "X-RapidAPI-Key": "58139899e7msh67e1f765b1af1e6p17d817jsn6604c89591dd",
         "X-RapidAPI-Host": "job-search-api1.p.rapidapi.com"
       }
     };
@@ -59,13 +56,8 @@ async function searchFtn() {
       
 
       const response = await fetch(url, options);
-      console.log(response);
       const result = await response.json();
       userSpinner.style.display = "none";
-
-      console.log(result);
-
-
 
       let addJobs = "";
 
@@ -75,7 +67,7 @@ async function searchFtn() {
 			 		<p class="job-title">Tile: ${job.title}</p>
 			 		<p class="job-location">Location: ${job?.location}</p>
 			 		<p class="job-source">Source: ${job.source}</p>
-			 			<a class="job-link" href=${job.application_url}>Application URL</a>
+			 			<a class="job-link" href=${job.application_url} target="_blank">Application URL</a>
 			 			<p class="job-comp-name">Company Name: ${job.company_name}</p>
 			 			<p class="job-desc">Job Desc: ${job.plain_text_description}</p>
 			 			<p class="job-time">Job Publication Time: ${job.publication_time.slice(
@@ -94,7 +86,6 @@ async function searchFtn() {
 
       userJobResult.innerHTML = addJobs;
     } catch (error) {
-      console.error(error);
       alert(error.message)
     }
   }
@@ -107,12 +98,11 @@ async function searchFtn() {
 
 // This is to get the available software engineering jobs in Japan.
 
-// window.addEventListener("load", initialJobFetch);
+window.addEventListener("load", initialJobFetch);
 
 async function initialJobFetch() {
-  // windowSpinner.style.display = "flex"
 
-  // const url =
+  const url =
   "https://job-search-api1.p.rapidapi.com/v1/job-description-search?q=software%20engineer&page=1&country=japan";
   const options = {
     method: "GET",
@@ -127,7 +117,6 @@ async function initialJobFetch() {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    console.log(result);
     windowSpinner.style.display = "none";
 
     let addjobs = "";
@@ -137,7 +126,7 @@ async function initialJobFetch() {
       <p class="job-title">Tile: ${job?.title}</p>
       <p class="job-location">Location: ${job?.location}</p>
       <p class="job-source">Source: ${job?.source}</p>
-        <a class="job-link" href="${job?.application_url}">Application URL</a>
+        <a class="job-link" href="${job?.application_url} target="_blank"">Application URL</a>
         <p class="job-comp-name">Company Name: ${job?.company_name}</p>
         <p class="job-desc">Job Desc: ${job?.plain_text_description}</p>
         <p class="job-time">Job Publication Time: ${job?.publication_time.slice(
@@ -151,9 +140,10 @@ async function initialJobFetch() {
 
     jobCon.innerHTML = addjobs;
   } catch (error) {
-    console.error(error);
   }
 }
+
+
 
 // For contact
 
@@ -171,7 +161,7 @@ document.querySelector("#contact-form").addEventListener("submit", (e) => {
 // mobile nav toggle
 
 let toggleBtn = document.querySelector("#toggle-btn")
-// console.log(toggleBtn)
+
 toggleBtn.addEventListener("click",()=>{
   document.getElementById('sidebar').classList.toggle('active')
 })

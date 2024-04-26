@@ -3,57 +3,42 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Averia Serif Libre", serif;
-  
 }
-
 
 html {
   scroll-behavior: smooth;
-
 }
+
 html,
 body {
   position: relative;
   height: 100%;
   animation-name: fade-in;
-	animation-duration: 02s;
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
+  animation-duration: 02s;
 }
-
-
 
 .search-nav nav:nth-child(2) {
   display: none;
 }
 
-
-
-.search-nav, .user-job-result, .contact{
+.search-nav,
+.user-job-result,
+.contact {
   height: 100vh;
-
 }
 
-a{
+nav a {
   text-decoration: none;
   color: aliceblue;
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
 
-
-a:hover{
+nav a:hover {
   color: gold;
 }
 
-
-
 .search-nav {
-  /* height: 100vh; */
-
   background-image: url("../img/3601px-Tokyo_from_the_top_of_the_SkyTree.jpeg");
   background-size: cover;
   background-blend-mode: multiply;
@@ -70,7 +55,6 @@ a:hover{
 
 .search-nav .desktop header {
   padding: 3vh 3vw;
-  /* width: 80%; */
 }
 
 .search-nav .desktop .logo {
@@ -88,17 +72,10 @@ a:hover{
 
 .desktop header ul li {
   cursor: pointer;
-  /* color: aliceblue; */
-
   transition: all 0.5s ease-in-out;
 }
 
-
-
 .desktop header ul li:first-child {
-  /* display: flex;
-  align-items: center;
-  gap: 4px; */
   flex: 1;
 }
 
@@ -121,7 +98,6 @@ a:hover{
   display: flex;
   align-items: center;
   padding: 3vh 0;
-
   gap: 0 2vw;
 }
 
@@ -161,74 +137,67 @@ a:hover{
   letter-spacing: 1px;
 }
 
-
-
 /* translator  */
 
-.skiptranslate{
-  display: flex ;
-  flex-direction: column ;
+.skiptranslate {
+  display: flex;
+  flex-direction: column;
 }
-
-
-
-
 
 /* user-search-job-result */
 
-.user-search-job-result{
-
-  margin: 1vh 0;
+.user-search-job-result {
+  padding: 1vh 0;
   background-color: #f8f9fa !important;
 }
 
-#user-job-result{
+#user-job-result {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3vh 0;
   width: 100%;
   padding: 5vh 2vw;
+  background-color: #d1e5ff;
 }
-#user-job-result .user-result{
+
+#user-job-result .user-result {
   width: 100%;
   height: 60vh;
-  overflow: auto; 
+  overflow: auto;
   padding: 2vh 2vw;
   margin: 2vh 0;
   display: flex;
   flex-direction: column;
   gap: 1vh 0;
+  text-align: justify;
+  line-height: 28px;
 }
 
-#user-job-result .no-result{
-  display: flex ;
+#user-job-result .user-result p:first-child {
+  text-align: center !important;
+  padding-bottom: 1vh;
+}
+
+#user-job-result .no-result {
+  display: flex;
   justify-content: center;
   font-size: 24px;
   color: red;
 }
 
-#user-spinner{
+#user-spinner {
   display: none;
   justify-content: center;
   align-items: center;
   font-size: 30px;
   padding: 1vh 0;
-
 }
-
-
-#user-job-result .job-time p{
-  text-align: center;
-}
-
 
 /* slider */
-
 
 swiper-container {
   width: 100%;
   height: 50vh !important;
-  /* margin: 2vh 0; */
 }
 
 swiper-slide {
@@ -247,17 +216,14 @@ swiper-slide img {
   object-fit: cover;
 }
 
-
-
 /* job-posting */
 
-.job-posting{
-  margin: 1vh 0;
-  background-color: #f8f9fa ;
+.job-posting {
+  padding: 1vh 0;
+  background-color: #d1e5ff;
 }
 
-
-#job-con{
+#job-con {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3vh 0;
@@ -265,18 +231,25 @@ swiper-slide img {
   padding: 5vh 2vw;
 }
 
-#job-con div{
+#job-con div {
   width: 100%;
   height: 60vh;
-  overflow: auto; 
+  overflow: auto;
   padding: 2vh 2vw;
   margin: 2vh 0;
   display: flex;
   flex-direction: column;
   gap: 1vh 0;
+  text-align: justify;
+  line-height: 28px;
 }
 
-#window-spinner{
+#job-con div p:first-child {
+  text-align: center !important;
+  padding-bottom: 1vh;
+}
+
+#window-spinner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,135 +257,141 @@ swiper-slide img {
   padding: 1vh 0;
 }
 
+/* About */
 
-/* #job-con .job-card{
-  display: flex;
-  flex-direction: column;
-  gap: 0.5vh 0;
-  border-top-color: rgb(167, 205, 255);
-  border-top-width: 2px;
-  border-top-style: solid;
+.about {
   padding: 2vh 2vw;
-  cursor: pointer;
-} */
+}
 
+.about h2 {
+  text-align: center;
+  font-size: 35px;
+  padding: 2vh 0;
+}
+
+.about div {
+  text-align: justify;
+  line-height: 28px;
+}
+
+.about div p {
+  margin: 2vh 0;
+}
 
 /* why-choose */
 
-.why-choose{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.why-choose {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2vh 0;
-} 
-.why-choose h2{
-	margin: 4vh 0;
-
-font-size: 35px;
-}
-.why-choose .job-type-con{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	width: 90%;
-	margin: 0 auto;
-	gap: 3vh 3vw;
 }
 
-.job-type-con div{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	gap: 2vh 0;
+.why-choose h2 {
+  margin: 4vh 0;
+  font-size: 35px;
 }
 
-.job-type-con div .fa-lightbulb, .fa-wrench, .fa-house-medical, .fa-calculator{
-	font-size: 50px;
+.why-choose .job-type-con {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  margin: 0 auto;
+  gap: 3vh 3vw;
 }
 
-
-
-.job-type-con div div{
-	cursor: pointer;
-	margin: 2vh 0;
+.job-type-con div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2vh 0;
 }
 
-.job-type-con div div p{
-	color: rgb(247, 175, 175);
+.job-type-con div .fa-lightbulb,
+.fa-wrench,
+.fa-house-medical,
+.fa-calculator {
+  font-size: 50px;
+}
+
+.job-type-con div div {
+  cursor: pointer;
+  margin: 2vh 0;
+}
+
+.job-type-con div div p {
+  color: rgb(247, 175, 175);
 }
 
 /* contact */
 
-.contact{
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center; 
-	align-items: center;
-	background-image: url("../img/roppongihills.jpg");
-	background-size: cover;
-	background-blend-mode: multiply;
-	background-color: rgba(0, 0, 0, 0.3);
+.contact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/roppongihills.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.contact h2{
-	margin: 4vh 0;
-	font-size: 35px;
+.contact h2 {
+  margin: 4vh 0;
+  font-size: 35px;
   color: aliceblue;
 }
 
-.contact div{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-} 
-
-
-.contact form{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 1vh 0;
+.contact div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.contact form input, textarea{
-	width: 40vw;
-	padding: 1vh 0.5vw;
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh 0;
+}
+
+.contact form input,
+textarea {
+  width: 40vw;
+  padding: 1vh 0.5vw;
   border-radius: 6px;
   outline: none;
 }
 
-
-.contact form button{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0 3px;
-	padding: 1vh 2vw;
-	border-radius: 6px;
-	border: none;
-	transition: all 0.5s ease-in-out;
+.contact form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 3px;
+  padding: 1vh 2vw;
+  border-radius: 6px;
+  border: none;
+  transition: all 0.5s ease-in-out;
 }
 
-.contact form button:hover{
-	background-color: rgb(153, 153, 231);
-	cursor: pointer;
+.contact form button:hover {
+  background-color: rgb(153, 153, 231);
+  cursor: pointer;
 }
 
-
-
+/* footer */
 
 footer {
   background-color: black;
-  /* height: 100vh; */
   padding: 5vh 0;
   width: 100%;
   color: aliceblue;
-  /* height: 100%; */
-  
 }
 
 footer nav {
@@ -421,7 +400,6 @@ footer nav {
   width: 80%;
   margin: 0 auto;
 }
-
 
 footer nav div ul {
   list-style: none;
@@ -439,9 +417,9 @@ footer nav div ul li {
 footer nav div:last-child ul {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   gap: 0 5px;
 }
+
 footer nav div ul li {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.3);
@@ -452,49 +430,47 @@ footer nav div ul li:hover {
   color: #ffd700;
 }
 
-footer .small-con{
-	padding: 2vh 0;
-	display: flex;
-	justify-content: center;
-	color: rgba(255, 255, 255, 0.3);
-
+footer .small-con {
+  padding: 2vh 0;
+  display: flex;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.3);
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 15px;
 }
-::-webkit-scrollbar-track{
+
+::-webkit-scrollbar-track {
   background: #d1e5ff;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
   background: linear-gradient(#d1e5ff, #ff22e6);
   border-radius: 10px;
 }
 
-
-
-@keyframes fade-in{
-	from{opacity: 0;}
-	to {opacity: 1;}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-
-
-
-
 
 /* mobile view */
 
-@media screen and (max-width: 640px){
-
-  .search-nav nav:first-child{
+@media screen and (max-width: 640px) {
+  .search-nav nav:first-child {
     display: none;
   }
 
-  .search-nav nav:nth-child(2){
+  .search-nav nav:nth-child(2) {
     display: block;
   }
 
-  #sidebar{
+  #sidebar {
     position: fixed;
     width: 200px;
     height: 100%;
@@ -504,74 +480,73 @@ footer .small-con{
     z-index: 99;
   }
 
-  #sidebar.active{
+  #sidebar.active {
     left: 0;
   }
 
-  #sidebar ul{
+  #sidebar ul {
     margin-top: 12vh;
   }
-  
-  #sidebar ul li{
+
+  #sidebar ul li {
     list-style: none;
     color: aliceblue;
     font-size: 20px;
     padding: 20px 24px;
   }
 
-  #sidebar .toggle-btn{
+  #sidebar .toggle-btn {
     position: absolute;
     top: 30px;
-    left: 330px;
+    left: 315px;
   }
 
-  .toggle-btn span{
-    width: 45px;
+  .toggle-btn span {
+    width: 25px;
     height: 4px;
     background: #000;
     display: block;
     margin-top: 4px;
+    background-color: rgba(255, 34, 230);
+    cursor: pointer;
   }
 
   .mobile-nav-logo {
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    margin-left: 3vw;
+    margin-left: 5vw;
   }
 
-
-  .search-con div{
+  .search-con div {
     flex-direction: column;
     gap: 6px;
   }
 
-  .search-con div input{
+  .search-con div input {
     width: 50vw;
   }
 
-  #user-job-result{
+  #user-job-result {
     grid-template-columns: 1fr;
-
   }
 
-  #user-job-result .user-result{
-
+  #user-job-result .user-result {
   }
-  
-  #job-con{
+
+  #job-con {
     grid-template-columns: 1fr;
-  
+
     padding: 5vh 2vw;
   }
 
   /* The user search result and that of the one that fetches on load share same style here */
 
-  #user-job-result .user-result, #job-con div{
+  #user-job-result .user-result,
+  #job-con div {
     border-color: gold;
-    border-bottom-style:dotted;
+    border-bottom-style: dotted;
     border-width: 2px;
-
   }
 
   .why-choose .job-type-con {
@@ -579,16 +554,14 @@ footer .small-con{
     grid-template-columns: 1fr;
   }
 
-  .contact form input{
+  .contact form input {
     width: 70vw;
   }
-  .contact form textarea{
+  .contact form textarea {
     width: 70vw;
   }
-  
-  
-  .contact form button{
 
+  .contact form button {
     gap: 0 6px;
     padding: 1vh 7vw;
   }
