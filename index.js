@@ -38,7 +38,8 @@ searchBtn.addEventListener("click", searchFtn);
 async function searchFtn() {
 
 
-  if (jobTitle.value === "" && jobLocation.value === "") {
+  if (jobTitle.value === "" || jobLocation.value === "") {
+    alert("No input should be left empty")
     return;
   } else {
     userSpinner.style.display = "flex"
@@ -47,7 +48,7 @@ async function searchFtn() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "9eca6d0ee8mshac946c5f35ec812p1d0753jsnb4e5dafe5957",
+        "X-RapidAPI-Key": "d839606a2dmsh159904831abc3e1p115e32jsndfe71e6e9cd1",
         "X-RapidAPI-Host": "job-search-api1.p.rapidapi.com"
       }
     };
@@ -107,9 +108,7 @@ async function initialJobFetch() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "58139899e7msh67e1f765b1af1e6p17d817jsn6604c89591dd",
-      "X-RapidAPI-Key": "9eca6d0ee8mshac946c5f35ec812p1d0753jsnb4e5dafe5957",
-
+      "X-RapidAPI-Key": "d839606a2dmsh159904831abc3e1p115e32jsndfe71e6e9cd1",
       "X-RapidAPI-Host": "job-search-api1.p.rapidapi.com"
     }
   };
