@@ -1,18 +1,14 @@
-# Link to the live application https://my-mobilicis-assessment.netlify.app/
+Link to the live application https://my-mobilicis-assessment.netlify.app/
 
-## Link to the source code https://github.com/Optimist19/Optimist19-Mobilicis-assessment
+Link to the source code https://github.com/Optimist19/Optimist19-Mobilicis-assessment
 
-### You first of all register here https://rapidapi.com/auth/sign-up?referral=/hub ,
-### then you use this link https://rapidapi.com/jobwiz-jobwiz-default/api/job-search-api1/
-### to get the api key and the api host. To be able to use use the api, you will have to subscribe for it.
+You first of all register here https://rapidapi.com/auth/sign-up?referral=/hub ,then you use this link https://rapidapi.com/jobwiz-jobwiz-default/api/job-search-api1/ to get the api key and the api host. To be able to use use the api, you will have to subscribe for it.
 
-### This is one reserved api key 'X-RapidAPI-Key': "f0ec3c37camsh4c031c04e14bee4p1ec011jsn0f177c69b18a"
-### to test my application. By the time you want to check out my work, I might have exhausted my quota.
-### What you have to do is just to replace the old api key with the reserved one.
+This is one reserved api key 'X-RapidAPI-Key': "f0ec3c37camsh4c031c04e14bee4p1ec011jsn0f177c69b18a" to test my application. By the time you want to check out my work, I might have exhausted my quota. What you have to do is just to replace the old api key with the reserved one.
 
-#### Note, you can as well change the params to suit your need. I am concerned about jobs in Japan, so I changed mine to Japan.
+Note, you can as well change the params to suit your need. I am concerned about jobs in Japan, so I changed mine to Japan.
 
-##### This below is the example of what you are going to see when you visit the site.
+This below is the example of what you are going to see when you visit the site.
 
 ```js
 const url =

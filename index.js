@@ -65,17 +65,13 @@ async function searchFtn() {
       if (result && result.jobs && result.jobs.length > 0) {
         for (let job of result.jobs) {
           addJobs += `<div class="user-result">
-			 		<p class="job-title">Tile: ${job.title}</p>
-			 		<p class="job-location">Location: ${job?.location}</p>
-			 		<p class="job-source">Source: ${job.source}</p>
-			 			<a class="job-link" href=${job.application_url} target="_blank">Application URL</a>
-			 			<p class="job-comp-name">Company Name: ${job.company_name}</p>
-			 			<p class="job-desc">Job Desc: ${job.plain_text_description}</p>
-			 			<p class="job-time">Job Publication Time: ${job.publication_time.slice(
-              0,
-              10
-            )}</p>
-	
+            <p class="job-title">Tile: ${job.title}</p>
+            <p class="job-location">Location: ${job?.location}</p>
+            <p class="job-source">Source: ${job.source}</p>
+            <a class="job-link" href=${job.application_url} target="_blank">Application URL</a>
+            <p class="job-comp-name">Company Name: ${job.company_name}</p>
+            <p class="job-desc">Job Desc: ${job.plain_text_description}</p>
+            <p class="job-time">Job Publication Time: ${job.publication_time.slice(0, 10)}</p>
 			 		</div>`;
         }
       } else {
@@ -122,19 +118,14 @@ async function initialJobFetch() {
 
     for (let job of result.jobs) {
       addjobs += `<div>
-      <p class="job-title">Tile: ${job?.title}</p>
-      <p class="job-location">Location: ${job?.location}</p>
-      <p class="job-source">Source: ${job?.source}</p>
+        <p class="job-title">Tile: ${job?.title}</p>
+        <p class="job-location">Location: ${job?.location}</p>
+        <p class="job-source">Source: ${job?.source}</p>
         <a class="job-link" href="${job?.application_url} target="_blank"">Application URL</a>
         <p class="job-comp-name">Company Name: ${job?.company_name}</p>
         <p class="job-desc">Job Desc: ${job?.plain_text_description}</p>
-        <p class="job-time">Job Publication Time: ${job?.publication_time.slice(
-          0,
-          10
-        )}</p>
-    
-    
-		</div>`;
+        <p class="job-time">Job Publication Time: ${job?.publication_time.slice(0, 10)}</p>
+  	</div>`;
     }
 
     jobCon.innerHTML = addjobs;
